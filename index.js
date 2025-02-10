@@ -14,7 +14,7 @@ app.get('/', async (req, res) => {
     const password = process.env.PASSWORD;
     if (req.headers.authorization !== `Basic ${Buffer.from(`${username}:${password}`).toString('base64')}`) {
         res.set('WWW-Authenticate', 'Basic realm="Restricted Area"');
-        throw 401;
+        res.status(401).send('Unauthorized');
     }
     const report = await getLogReport();
     res.send(report);
