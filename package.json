@@ -1,0 +1,16 @@
+{
+    "name": "caddy-logger",
+    "version": "1.0.0",
+    "description": "A simple log server to collect logs from Caddy",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "express": "^4.18.2",
+        "sqlite3": "^5.1.6"
+    },
+    "engines": {
+        "node": ">=18"
+    }
+}
