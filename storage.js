@@ -52,6 +52,7 @@ interface
 module.exports.getLogsAggregate = async function () {
     const result = {}
     const dateFolders = fs.readdirSync(uniqueVisitorsDir);
+    dateFolders.sort((a, b) => Date.parse(b) - Date.parse(a));
     for (const folder of dateFolders) {
         const domainFiles = fs.readdirSync(path.join(uniqueVisitorsDir, folder));
         result[folder] = {}
